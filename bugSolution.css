@@ -1,0 +1,21 @@
+/* bugSolution.css */
+
+/* Instead of calc(100% - 100%), use a direct 0 value */
+.element {
+  width: 0;
+}
+
+/* Handle potential division by zero cases using JavaScript or conditional CSS */
+/*Example using conditional CSS*/
+.container {
+  width: 200px;
+}
+
+.container .item {
+  width: calc(100px / var(--divisor, 1)); /*Default divisor to 1 to avoid division by 0 errors*/
+}
+
+.container.noItems .item {
+  width: 0; /*If no items, set width to 0*/
+}
+/*This would require a JS to add/remove class based on items availability.*/
